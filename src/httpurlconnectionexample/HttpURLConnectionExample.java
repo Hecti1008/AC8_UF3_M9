@@ -44,7 +44,9 @@ public class HttpURLConnectionExample {
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
 		// optional default is GET
-		con.setRequestMethod("GET");
+		con.setRequestMethod("GET o PUT");
+                String metodologia = scan.next();
+                con.setRequestMethod(metodologia);
 
 		//add request header
 		con.setRequestProperty("User-Agent", USER_AGENT);
