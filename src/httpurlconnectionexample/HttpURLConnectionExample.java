@@ -20,6 +20,7 @@ import java.util.Scanner;
 public class HttpURLConnectionExample {
 
        Scanner scan = new Scanner (System.in);
+       String metodologia;
     private final String USER_AGENT = "Mozilla/5.0";
 
 	public static void main(String[] args) throws Exception {
@@ -45,7 +46,7 @@ public class HttpURLConnectionExample {
 
 		// optional default is GET
 		con.setRequestMethod("GET o PUT");
-                String metodologia = scan.next();
+                metodologia = scan.next();
                 con.setRequestMethod(metodologia);
 
 		//add request header
@@ -79,7 +80,9 @@ public class HttpURLConnectionExample {
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
 		//add reuqest header
-		con.setRequestMethod("POST");
+                System.out.println("Quin metode vols fer servir? ");
+                metodologia = scan.next();
+		con.setRequestMethod(metodologia);
 		con.setRequestProperty("User-Agent", USER_AGENT);
 		con.setRequestProperty("Accept-Language", "ca-es");
 		
