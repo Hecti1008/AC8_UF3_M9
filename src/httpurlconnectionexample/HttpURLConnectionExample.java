@@ -19,6 +19,7 @@ import java.util.Scanner;
  */
 public class HttpURLConnectionExample {
 
+       Scanner scan = new Scanner (System.in);
     private final String USER_AGENT = "Mozilla/5.0";
 
 	public static void main(String[] args) throws Exception {
@@ -36,7 +37,6 @@ public class HttpURLConnectionExample {
 	// HTTP GET request
 	private void sendGet() throws Exception {
 
-                Scanner scan = new Scanner (System.in);
                 System.out.println("URL a visitar? ");
 		String url = scan.next();
 		
@@ -73,7 +73,8 @@ public class HttpURLConnectionExample {
 	// HTTP POST request
 	private void sendPost() throws Exception {
 
-		String url = "http://www.insbaixcamp.cat/moodle/";
+		System.out.println("URL a visitar? ");
+		String url = scan.next();
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
