@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
+import java.util.Scanner;
 
 /**
  *
@@ -35,7 +36,9 @@ public class HttpURLConnectionExample {
 	// HTTP GET request
 	private void sendGet() throws Exception {
 
-		String url = "http://www.insbaixcamp.org/";
+                Scanner scan = new Scanner (System.in);
+                System.out.println("URL a visitar? ");
+		String url = scan.next();
 		
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
